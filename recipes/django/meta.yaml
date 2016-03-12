@@ -156,9 +156,9 @@ test:
         - django.contrib.humanize.templatetags
         - django.contrib.messages
         - django.contrib.messages.storage
-        - django.contrib.postgres
-        #- django.contrib.postgres.fields
-        - django.contrib.postgres.forms
+        - django.contrib.postgres  # [not win]
+        #- django.contrib.postgres.fields  # [not win]
+        - django.contrib.postgres.forms  # [not win]
         - django.contrib.redirects
         - django.contrib.redirects.migrations
         - django.contrib.sessions
