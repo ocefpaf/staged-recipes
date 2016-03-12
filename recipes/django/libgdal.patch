@@ -1,6 +1,6 @@
 --- django/contrib/gis/gdal/libgdal.py	2016-03-05 11:14:16.000000000 -0300
-+++ django/contrib/gis/gdal/libgdal.py	2016-03-11 18:58:38.318967475 -0300
-@@ -2,58 +2,33 @@
++++ django/contrib/gis/gdal/libgdal.py	2016-03-12 06:55:40.601440867 -0300
+@@ -2,58 +2,34 @@
  
  import logging
  import os
@@ -70,6 +70,7 @@
      from ctypes import WinDLL
 -    lwingdal = WinDLL(lib_path)
 +    libname = os.path.join(sys.prefix, 'Library', 'bin', 'gdal111.dll')
++    lgdal = CDLL(libname)
 +    lwingdal = WinDLL(libname)
 +else:
 +    raise Exception('No valid platform name. Found {}'.format(os.name))
