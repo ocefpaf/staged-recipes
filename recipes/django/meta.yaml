@@ -28,7 +28,7 @@ requirements:
 
 test:
     requires:
-        - psycopg2
+        - psycopg2  # [not win]
     imports:
         - django
         - django.apps
@@ -198,7 +198,7 @@ test:
         - django.db.backends.dummy
         - django.db.backends.mysql
         - django.db.backends.oracle
-        - django.db.backends.postgresql_psycopg2
+        - django.db.backends.postgresql_psycopg2  # [not win]
         - django.db.backends.sqlite3
         - django.db.migrations
         - django.db.migrations.operations
