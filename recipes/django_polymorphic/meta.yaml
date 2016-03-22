@@ -10,7 +10,7 @@ source:
     md5: c6999aa8aa4d5a992e2664f050a8e858
 
 build:
-    number: 0
+    number: 1
     script: python setup.py install --single-version-externally-managed --record=record.txt
     preserve_egg_dir: True
 
@@ -22,13 +22,11 @@ requirements:
         - python
         - django
 
-#test:
-    #requires:
-        #- coverage
-    #files:
-        #- runtests.py
-    #commands:
-        #- cp runtests.py $SRC_DIR && cd $SRC_DIR && coverage run --source=polymorphic runtests.py
+test:
+    requires:
+        - django
+    commands:
+        - python -c "import django; import polymorphic"
 
 about:
     home: https://github.com/chrisglass/django_polymorphic
